@@ -6,7 +6,7 @@ import {
   MagnifyingGlass,
   PlusCircle,
 } from 'phosphor-react';
-import Image from 'next/image';
+import Playlist from './Playlist';
 
 const Sidebar = () => {
   const handleHomeClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -31,11 +31,16 @@ const Sidebar = () => {
   ) => {
     console.log('Liked Songs button clicked');
   };
+  const handlePlaylistButtonClick = (
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    console.log('Playlist button clicked');
+  };
 
   return (
     <div
       id='spotify-sidebar'
-      className='flex flex-col flex-none w-64 pt-5 bg-black'
+      className='relative flex flex-col flex-none pt-5 overflow-auto bg-black'
     >
       <ul id='main-navigation-buttons' className='flex flex-col'>
         <NavigationButton data={{ clickHandler: handleHomeClick }}>
@@ -76,23 +81,8 @@ const Sidebar = () => {
           Liked Songs
         </NavigationButton>
       </ul>
-      <hr className='flex-1 m-4 opacity-20'></hr>
-      <div className='overflow-auto '>
-        <PlusCircle className='float-left mr-2' size={200} weight='fill' />
-
-        <PlusCircle className='float-left mr-2' size={200} weight='fill' />
-        <PlusCircle className='float-left mr-2' size={200} weight='fill' />
-        <PlusCircle className='float-left mr-2' size={200} weight='fill' />
-      </div>
-      <div id='song-information' className='mt-auto bg-blue-100 '>
-        <Image
-          src='/spotify/album.jpg'
-          alt='album'
-          height='500'
-          width='500'
-          objectFit='cover'
-        />
-      </div>
+      <hr className='flex-1 m-4 overflow-auto opacity-20'></hr>
+      <Playlist />
     </div>
   );
 };

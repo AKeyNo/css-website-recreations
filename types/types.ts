@@ -1,6 +1,6 @@
-import React, { MouseEventHandler } from 'react';
+import React from 'react';
 
-export interface NavigationProps {
+export interface GeneralButtonProps {
   data: {
     clickHandler?: (e: React.MouseEvent<HTMLButtonElement>) => void;
     children?: string;

@@ -1,7 +1,7 @@
-import { NavigationProps } from '../../types/navigationProps';
+import { GeneralButtonProps } from '../../types/types';
 import { PropsWithChildren } from 'react';
 
-const NavigationButton: React.FC<PropsWithChildren<NavigationProps>> = ({
+const NavigationButton: React.FC<PropsWithChildren<GeneralButtonProps>> = ({
   data,
   children,
 }) => {
@@ -9,7 +9,7 @@ const NavigationButton: React.FC<PropsWithChildren<NavigationProps>> = ({
     <li className='flex-1'>
       <button
         id='spotify-home-button'
-        className='w-full p-2 font-bold text-left duration-200 text-slate-400 hover:text-white drop-shadow-xl'
+        className='w-full p-2 font-bold text-left duration-200 text-slate-400 hover:text-white drop-shadow-xl hover:drop-shadow-none'
         onClick={data.clickHandler}
       >
         {children}
