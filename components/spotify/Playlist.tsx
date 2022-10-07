@@ -19,14 +19,6 @@ const Playlist = () => {
     console.log('Playlist button clicked');
   };
 
-  const createPlaylistButton = (playlistName: string) => {
-    return (
-      <PlaylistButton data={{ clickHandler: handlePlaylistButtonClick }}>
-        {playlistName}
-      </PlaylistButton>
-    );
-  };
-
   return (
     <div className='relative flex-initial h-full overflow-auto overflow-x-hidden'>
       {playlistNames.map((name, i) => {
